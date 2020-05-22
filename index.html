@@ -60,7 +60,7 @@ timeline.push({
           { son:'sound/do_sexta_aumentada+1.wav',data: {test_part: 'test', correct_response:'20'}},
           { son:'sound/do_setima_maior.wav',data: {test_part: 'test', correct_response:'21'}}, 
           { son:'sound/do_setima_maior+1.wav',data: {test_part: 'test', correct_response:'22'}}, 
-          { son:'sound/do_oitava.wav',data: {test_part: 'test', correct_response:'23'}}, 
+
           { son:'sound/do_unissono_+1_oitava.wav',data: {test_part: 'test', correct_response:'0'}},
           { son:'sound/do_segunda_menor_oitava.wav',data: {test_part: 'test', correct_response:'1'}}, 
           { son:'sound/do_segunda_menor+1_oitava.wav',data: {test_part: 'test', correct_response:'2'}},
@@ -84,7 +84,7 @@ timeline.push({
           { son:'sound/do_sexta_aumentada+1_oitava.wav',data: {test_part: 'test', correct_response:'20'}}, 
           { son:'sound/do_setima_maior_oitava.wav',data: {test_part: 'test', correct_response:'21'}}, 
           { son:'sound/do_setima_maior+1_oitava.wav',data: {test_part: 'test', correct_response:'22'}},
-          { son:'sound/do_oitava_oitava.wav',data: {test_part: 'test', correct_response:'23'}},
+
 
           { son:'sound/la_unissono_+1.wav',data: {test_part: 'test', correct_response:'0'}},
           { son:'sound/la_segunda_menor.wav',data: {test_part: 'test', correct_response:'1'}}, 
@@ -158,7 +158,6 @@ timeline.push({
           { son:'sound/do_sexta_aumentada+1.wav',data: {test_part: 'test', correct_response:'20'}}, 
           { son:'sound/do_setima_maior.wav',data: {test_part: 'test', correct_response:'21'}}, 
           { son:'sound/do_setima_maior+1.wav',data: {test_part: 'test', correct_response:'22'}}, 
-          { son:'sound/do_oitava.wav',data: {test_part: 'test', correct_response:'23'}},
           { son:'sound/do_unissono_+1_oitava.wav',data: {test_part: 'test', correct_response:'0'}}, 
           { son:'sound/do_segunda_menor_oitava.wav',data: {test_part: 'test', correct_response:'1'}}, 
           { son:'sound/do_segunda_menor+1_oitava.wav',data: {test_part: 'test', correct_response:'2'}}, 
@@ -182,7 +181,7 @@ timeline.push({
           { son:'sound/do_sexta_aumentada+1_oitava.wav',data: {test_part: 'test', correct_response:'20'}}, 
           { son:'sound/do_setima_maior_oitava.wav',data: {test_part: 'test', correct_response:'21'}},
           { son:'sound/do_setima_maior+1_oitava.wav',data: {test_part: 'test', correct_response:'22'}}, 
-          { son:'sound/do_oitava_oitava.wav',data: {test_part: 'test', correct_response:'23'}}
+
 ];
     
    
@@ -258,14 +257,12 @@ timeline.push(acuracia);
     timeline.push(cabou);
     
     /* start the experiment */
-
     jsPsych.init({
       timeline: timeline,
-      preload_audio: ['sound/do_unissono_+1.wav', 'sound/do_segunda_menor.wav', 'sound/do_segunda_menor+1.wav', 'sound/do_segunda_maior.wav', 'sound/do_segunda_maior+1.wav', 'sound/do_terca_menor.wav', 'sound/do_terca_menor+1.wav', 'sound/do_terca_maior.wav', 'sound/do_terca_maior+1.wav', 'sound/do_quarta_justa.wav', 'sound/do_quarta_justa+1.wav', 'sound/do_quarta_aumentada.wav', 'sound/do_quarta_aumentada+1.wav', 'sound/do_quinta_justa.wav', 'sound/do_quinta_justa+1.wav', 'sound/do_quinta_aumentada.wav', 'sound/do_quinta_aumentada+1.wav', 'sound/do_sexta_maior.wav', 'sound/do_sexta_maior+1.wav', 'sound/do_sexta_aumentada.wav', 'sound/do_sexta_aumentada+1.wav', 'sound/do_setima_maior.wav', 'sound/do_setima_maior+1.wav', 'sound/do_oitava.wav', 'sound/do_unissono_+1_oitava.wav', 'sound/do_segunda_menor_oitava.wav', 'sound/do_segunda_menor+1_oitava.wav', 'sound/do_segunda_maior_oitava.wav', 'sound/do_segunda_maior+1_oitava.wav', 'sound/do_terca_menor_oitava.wav', 'sound/do_terca_menor+1_oitava.wav', 'sound/do_terca_maior_oitava.wav', 'sound/do_terca_maior+1_oitava.wav', 'sound/do_quarta_justa_oitava.wav', 'sound/do_quarta_justa+1_oitava.wav', 'sound/do_quarta_aumentada_oitava.wav', 'sound/do_quarta_aumentada+1_oitava.wav', 'sound/do_quinta_justa_oitava.wav', 'sound/do_quinta_justa+1_oitava.wav', 'sound/do_quinta_aumentada_oitava.wav', 'sound/do_quinta_aumentada+1_oitava.wav', 'sound/do_sexta_maior_oitava.wav', 'sound/do_sexta_maior+1_oitava.wav', 'sound/do_sexta_aumentada_oitava.wav', 'sound/do_sexta_aumentada+1_oitava.wav', 'sound/do_setima_maior_oitava.wav', 'sound/do_setima_maior+1_oitava.wav', 'sound/do_oitava_oitava.wav'],
+      preload_audio: ['sound/do_unissono_+1.wav', 'sound/do_segunda_menor.wav', 'sound/do_segunda_menor+1.wav', 'sound/do_segunda_maior.wav', 'sound/do_segunda_maior+1.wav', 'sound/do_terca_menor.wav', 'sound/do_terca_menor+1.wav', 'sound/do_terca_maior.wav', 'sound/do_terca_maior+1.wav', 'sound/do_quarta_justa.wav', 'sound/do_quarta_justa+1.wav', 'sound/do_quarta_aumentada.wav', 'sound/do_quarta_aumentada+1.wav', 'sound/do_quinta_justa.wav', 'sound/do_quinta_justa+1.wav', 'sound/do_quinta_aumentada.wav', 'sound/do_quinta_aumentada+1.wav', 'sound/do_sexta_maior.wav', 'sound/do_sexta_maior+1.wav', 'sound/do_sexta_aumentada.wav', 'sound/do_sexta_aumentada+1.wav', 'sound/do_setima_maior.wav', 'sound/do_setima_maior+1.wav', 'sound/do_unissono_+1_oitava.wav', 'sound/do_segunda_menor_oitava.wav', 'sound/do_segunda_menor+1_oitava.wav', 'sound/do_segunda_maior_oitava.wav', 'sound/do_segunda_maior+1_oitava.wav', 'sound/do_terca_menor_oitava.wav', 'sound/do_terca_menor+1_oitava.wav', 'sound/do_terca_maior_oitava.wav', 'sound/do_terca_maior+1_oitava.wav', 'sound/do_quarta_justa_oitava.wav', 'sound/do_quarta_justa+1_oitava.wav', 'sound/do_quarta_aumentada_oitava.wav', 'sound/do_quarta_aumentada+1_oitava.wav', 'sound/do_quinta_justa_oitava.wav', 'sound/do_quinta_justa+1_oitava.wav', 'sound/do_quinta_aumentada_oitava.wav', 'sound/do_quinta_aumentada+1_oitava.wav', 'sound/do_sexta_maior_oitava.wav', 'sound/do_sexta_maior+1_oitava.wav', 'sound/do_sexta_aumentada_oitava.wav', 'sound/do_sexta_aumentada+1_oitava.wav', 'sound/do_setima_maior_oitava.wav', 'sound/do_setima_maior+1_oitava.wav'],
       on_finish: function(data) {
       var resultJson = jsPsych.data.get().filter([{trial_type: 'survey-text'}, {trial_type: 'html-button-response'}, {trial_type: 'audio-keyboard-response'}]).json();
       }
     });
   </script>
 </html>
-
