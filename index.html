@@ -224,8 +224,8 @@ timeline.push(test_procedure);
 
 
 var acuracia = {
-        type: "html-keyboard-response",
-        choices: [13],
+        type: "html-button-response",
+        choices: ['Salvar'],
         data: {
             primeiro_treino: 'primeiro_treino'
         },
@@ -239,21 +239,12 @@ var acuracia = {
             });
             var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
 
-            return '<font size="5">A sua taxa de acerto foi ' + accuracy + '%.<br><br>Seu merda<br>Aperta barra de espaço se quiser<br>salvar os dados<br>Se nao, só atualiza a pagina</font>';
+            return '<font size="5">A sua taxa de acerto foi ' + accuracy + '%.<br><br>Seu merda<br>Aperta enter se quiser<br>salvar os dados<br>Se nao, só atualiza a pagina</font>';
 
         }
     }
 timeline.push(acuracia);
 
-    /* Treino em loop */
-
-    var cabou = {
-      type: "html-keyboard-response",
-      stimulus: "PENIS",
-      post_trial_gap: 0,
-      choices: ['spacebar']
-    };
-    timeline.push(cabou);
     
     /* start the experiment */
     jsPsych.init({
