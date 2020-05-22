@@ -83,6 +83,8 @@ for(i in 1:length(intervals)){
   seewave::savewav(wave = assign(name, sound), filename = name, f = 22050)
 }
 
+
+
 #Visualizing and listening
 seewave::listen(oi, f = 22050)
 plot(oi[1:100], type = 'ls')
