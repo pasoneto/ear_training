@@ -208,7 +208,7 @@ var feedback = {
             if (last_trial_correct) {
                 return '<font size="5">Certo!<br><br>Aperte enter para continuar</font>';
             } else {
-                return '<font size="5">Errado.<br><br>Era' +nome_trial+ ' seu merda </font>'
+              return '<font size="5">Errou, era ' + accuracy + '.<br><br>Seu merda</font>';
             }
         }
 }
@@ -216,7 +216,7 @@ var feedback = {
     var test_procedure = {
       timeline: [test, feedback],
       timeline_variables: test_stimuli,
-      repetitions: 10,
+      repetitions: 1,
       randomize_order: true
         }
   
