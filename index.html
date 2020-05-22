@@ -36,7 +36,7 @@ timeline.push({
        
     /* Treino em loop */
 
-    var test_stimuli = [
+    var test_stimuli_base = [
           { son:'sound/do_unissono_+1.wav',data: {test_part: 'test', correct_response:'0', int: 'unissono +1'}}, 
           { son:'sound/do_segunda_menor.wav',data: {test_part: 'test', correct_response:'1', int: 'segunda menor'}}, 
           { son:'sound/do_segunda_menor+1.wav',data: {test_part: 'test', correct_response:'2', int: 'segunda menor +1'}}, 
@@ -181,7 +181,7 @@ timeline.push({
           { son:'sound/la_setima_maior_oitava.wav',data: {test_part: 'test', correct_response:'21', int: 'setima maior oitava'}}, 
           { son:'sound/la_setima_maior+1_oitava.wav',data: {test_part: 'test', correct_response:'22', int: 'setima maior +1 oitava'}},
 ];
-    
+    var test_stimuli = _.sample(test_stimuli_base, 20);  
    
     var test = {
       type: "audio-button-response",
