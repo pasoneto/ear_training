@@ -60,9 +60,8 @@ input[type="text"] {
   display: -ms-inline-flexbox;
   padding: 6px 12px;
   width:150px;
-  height:100px;
-  float: center;
   height: 35px;
+  float: center;
   margin: 10px auto auto auto;
   font-size: 14px;
   font-weight: 400;
