@@ -188,7 +188,7 @@ timeline.push({
       type: "audio-button-response",
       stimulus: jsPsych.timelineVariable('son'),
       choices: jsPsych.NO_KEYS,
-      prompt: "<p>Vai lá, bonzao.... responde ae</p>",
+      prompt: "<p>Qual intervalo você ouviu?</p>",
       choices: ['unissono_+1', 'segunda_menor', 'segunda_menor+1', 'segunda_maior', 'segunda_maior+1', 'terca_menor', 'terca_menor+1', 'terca_maior', 'terca_maior+1', 'quarta_justa', 'quarta_justa+1', 'quarta_aumentada', 'quarta_aumentada+1', 'quinta_justa', 'quinta_justa+1', 'quinta_aumentada', 'quinta_aumentada+1', 'sexta_maior', 'sexta_maior+1', 'sexta_aumentada', 'sexta_aumentada+1', 'setima_maior', 'setima_maior+1', 'oitava'],
       response_ends_trial: true,
       data: jsPsych.timelineVariable('data'),
@@ -200,14 +200,14 @@ timeline.push({
 /*Treinando diferenciação*/
 var feedback = {
         type: 'html-button-response',
-        choices: ['Sou gay e quero continuar'],
+        choices: ['Continuar'],
         stimulus: function() {
             var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
             var nome_trial = jsPsych.data.get().last(1).values()[0].int;
             if (last_trial_correct) {
                 return '<font size="5">Certo!<br><br>Aperte enter para continuar</font>';
             } else {
-                return '<font size="5">Errou, era ' + nome_trial + '.<br><br>Seu merda</font>';
+                return '<font size="5">Errou, era ' + nome_trial + '.<br></font>';
             }
         }
 }
@@ -239,7 +239,7 @@ var acuracia = {
             });
             var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
 
-            return '<font size="5">A sua taxa de acerto foi ' + accuracy + '%.<br><br>Seu merda<br>Aperta enter se quiser<br>salvar os dados<br>Se nao, só atualiza a pagina</font>';
+            return '<font size="5">A sua taxa de acerto foi ' + accuracy + '%.<br><br>Aperta enter se quiser<br>salvar os dados<br>Se nao, só atualiza a pagina</font>';
 
         }
     }
