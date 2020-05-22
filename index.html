@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<style type="text/css">
+</style>
+    <title>Ear training</title>
+    <script src="jspsych-6.0.2/jspsych.js"></script>
+    <script src="jspsych-6.0.2/plugins/jspsych-audio-button-response.js"></script>
+    <script src="jspsych-6.0.2/plugins/jspsych-html-keyboard-response.js"></script>
+    <script src="jspsych-6.0.2/plugins/jspsych-html-button-response.js"></script>
+    <script src="jspsych-6.0.2/plugins/jspsych-fullscreen.js"></script>
+    <link href="jspsych-6.0.2/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+    
+  </head>
+    <style>
+    body {
+    background-color: #000000;
+    color: #D3D3D3
+  </style>
+  <body></body>
+  <script>
+
+    /* create timeline */
+    var timeline = [];
+timeline.push({
+  type: 'fullscreen',
+  fullscreen_mode: false
+});
+  
+    var bemvindo = {
+      type: "html-button-response",
+      stimulus: 'Pablo gay!',
+      choices: ['Começar']
+    };
+    timeline.push(bemvindo);
+       
+    /* Treino em loop */
+
+    var test_stimuli = [
+          { son:'sound/do_unissono_+1.wav',data: {test_part: 'test', correct_response:'0'}}, 
+          { son:'sound/do_segunda_menor.wav',data: {test_part: 'test', correct_response:'1'}}, 
+          { son:'sound/do_segunda_menor+1.wav',data: {test_part: 'test', correct_response:'2'}}, 
+          { son:'sound/do_segunda_maior.wav',data: {test_part: 'test', correct_response:'3'}}, 
+          { son:'sound/do_segunda_maior+1.wav',data: {test_part: 'test', correct_response:'4'}},
+          { son:'sound/do_terca_menor.wav',data: {test_part: 'test', correct_response:'5'}}, 
+          { son:'sound/do_terca_menor+1.wav',data: {test_part: 'test', correct_response:'6'}}, 
+          { son:'sound/do_terca_maior.wav',data: {test_part: 'test', correct_response:'7'}}, 
+          { son:'sound/do_terca_maior+1.wav',data: {test_part: 'test', correct_response:'8'}}, 
+          { son:'sound/do_quarta_justa.wav',data: {test_part: 'test', correct_response:'9'}}, 
+          { son:'sound/do_quarta_justa+1.wav',data: {test_part: 'test', correct_response:'10'}}, 
+          { son:'sound/do_quarta_aumentada.wav',data: {test_part: 'test', correct_response:'11'}},
+          { son:'sound/do_quarta_aumentada+1.wav',data: {test_part: 'test', correct_response:'12'}},
+          { son:'sound/do_quinta_justa.wav',data: {test_part: 'test', correct_response:'13'}},
+          { son:'sound/do_quinta_justa+1.wav',data: {test_part: 'test', correct_response:'14'}}, 
+          { son:'sound/do_quinta_aumentada.wav',data: {test_part: 'test', correct_response:'15'}},
+          { son:'sound/do_quinta_aumentada+1.wav',data: {test_part: 'test', correct_response:'16'}},
+          { son:'sound/do_sexta_maior.wav',data: {test_part: 'test', correct_response:'17'}},
+          { son:'sound/do_sexta_maior+1.wav',data: {test_part: 'test', correct_response:'18'}},
+          { son:'sound/do_sexta_aumentada.wav',data: {test_part: 'test', correct_response:'19'}}, 
+          { son:'sound/do_sexta_aumentada+1.wav',data: {test_part: 'test', correct_response:'20'}},
+          { son:'sound/do_setima_maior.wav',data: {test_part: 'test', correct_response:'21'}}, 
+          { son:'sound/do_setima_maior+1.wav',data: {test_part: 'test', correct_response:'22'}}, 
+          { son:'sound/do_oitava.wav',data: {test_part: 'test', correct_response:'23'}}, 
+          { son:'sound/do_unissono_+1_oitava.wav',data: {test_part: 'test', correct_response:'0'}},
+          { son:'sound/do_segunda_menor_oitava.wav',data: {test_part: 'test', correct_response:'1'}}, 
+          { son:'sound/do_segunda_menor+1_oitava.wav',data: {test_part: 'test', correct_response:'2'}},
+          { son:'sound/do_segunda_maior_oitava.wav',data: {test_part: 'test', correct_response:'3'}},
+          { son:'sound/do_segunda_maior+1_oitava.wav',data: {test_part: 'test', correct_response:'4'}}, 
+          { son:'sound/do_terca_menor_oitava.wav',data: {test_part: 'test', correct_response:'5'}},
+          { son:'sound/do_terca_menor+1_oitava.wav',data: {test_part: 'test', correct_response:'6'}},
+          { son:'sound/do_terca_maior_oitava.wav',data: {test_part: 'test', correct_response:'7'}},
+          { son:'sound/do_terca_maior+1_oitava.wav',data: {test_part: 'test', correct_response:'8'}},
+          { son:'sound/do_quarta_justa_oitava.wav',data: {test_part: 'test', correct_response:'9'}},
+          { son:'sound/do_quarta_justa+1_oitava.wav',data: {test_part: 'test', correct_response:'10'}},
+          { son:'sound/do_quarta_aumentada_oitava.wav',data: {test_part: 'test', correct_response:'11'}},
+          { son:'sound/do_quarta_aumentada+1_oitava.wav',data: {test_part: 'test', correct_response:'12'}},
+          { son:'sound/do_quinta_justa_oitava.wav',data: {test_part: 'test', correct_response:'13'}},
+          { son:'sound/do_quinta_justa+1_oitava.wav',data: {test_part: 'test', correct_response:'14'}},
+          { son:'sound/do_quinta_aumentada_oitava.wav',data: {test_part: 'test', correct_response:'15'}}, 
+          { son:'sound/do_quinta_aumentada+1_oitava.wav',data: {test_part: 'test', correct_response:'16'}}, 
+          { son:'sound/do_sexta_maior_oitava.wav',data: {test_part: 'test', correct_response:'17'}},
+          { son:'sound/do_sexta_maior+1_oitava.wav',data: {test_part: 'test', correct_response:'18'}}, 
+          { son:'sound/do_sexta_aumentada_oitava.wav',data: {test_part: 'test', correct_response:'19'}},
+          { son:'sound/do_sexta_aumentada+1_oitava.wav',data: {test_part: 'test', correct_response:'20'}}, 
+          { son:'sound/do_setima_maior_oitava.wav',data: {test_part: 'test', correct_response:'21'}}, 
+          { son:'sound/do_setima_maior+1_oitava.wav',data: {test_part: 'test', correct_response:'22'}},
+          { son:'sound/do_oitava_oitava.wav',data: {test_part: 'test', correct_response:'23'}},
+
+          { son:'sound/la_unissono_+1.wav',data: {test_part: 'test', correct_response:'0'}},
+          { son:'sound/la_segunda_menor.wav',data: {test_part: 'test', correct_response:'1'}}, 
+          { son:'sound/la_segunda_menor+1.wav',data: {test_part: 'test', correct_response:'2'}}, 
+          { son:'sound/la_segunda_maior.wav',data: {test_part: 'test', correct_response:'3'}}, 
+          { son:'sound/la_segunda_maior+1.wav',data: {test_part: 'test', correct_response:'4'}}, 
+          { son:'sound/la_terca_menor.wav',data: {test_part: 'test', correct_response:'5'}}, 
+          { son:'sound/la_terca_menor+1.wav',data: {test_part: 'test', correct_response:'6'}}, 
+          { son:'sound/la_terca_maior.wav',data: {test_part: 'test', correct_response:'7'}}, 
+          { son:'sound/la_terca_maior+1.wav',data: {test_part: 'test', correct_response:'8'}}, 
+          { son:'sound/la_quarta_justa.wav',data: {test_part: 'test', correct_response:'9'}}, 
+          { son:'sound/la_quarta_justa+1.wav',data: {test_part: 'test', correct_response:'10'}}, 
+          { son:'sound/la_quarta_aumentada.wav',data: {test_part: 'test', correct_response:'11'}}, 
+          { son:'sound/la_quarta_aumentada+1.wav',data: {test_part: 'test', correct_response:'12'}}, 
+          { son:'sound/la_quinta_justa.wav',data: {test_part: 'test', correct_response:'13'}}, 
+          { son:'sound/la_quinta_justa+1.wav',data: {test_part: 'test', correct_response:'14'}}, 
+          { son:'sound/la_quinta_aumentada.wav',data: {test_part: 'test', correct_response:'15'}}, 
+          { son:'sound/la_quinta_aumentada+1.wav',data: {test_part: 'test', correct_response:'16'}}, 
+          { son:'sound/la_sexta_maior.wav',data: {test_part: 'test', correct_response:'17'}}, 
+          { son:'sound/la_sexta_maior+1.wav',data: {test_part: 'test', correct_response:'18'}}, 
+          { son:'sound/la_sexta_aumentada.wav',data: {test_part: 'test', correct_response:'19'}}, 
+          { son:'sound/la_sexta_aumentada+1.wav',data: {test_part: 'test', correct_response:'20'}}, 
+          { son:'sound/la_setima_maior.wav',data: {test_part: 'test', correct_response:'21'}}, 
+          { son:'sound/la_setima_maior+1.wav',data: {test_part: 'test', correct_response:'22'}}, 
+          { son:'sound/la_oitava.wav',data: {test_part: 'test', correct_response:'23'}}, 
+          { son:'sound/la_unissono_+1_oitava.wav',data: {test_part: 'test', correct_response:'0'}}, 
+          { son:'sound/la_segunda_menor_oitava.wav',data: {test_part: 'test', correct_response:'1'}}, 
+          { son:'sound/la_segunda_menor+1_oitava.wav',data: {test_part: 'test', correct_response:'2'}},
+          { son:'sound/la_segunda_maior_oitava.wav',data: {test_part: 'test', correct_response:'3'}}, 
+          { son:'sound/la_segunda_maior+1_oitava.wav',data: {test_part: 'test', correct_response:'4'}}, 
+          { son:'sound/la_terca_menor_oitava.wav',data: {test_part: 'test', correct_response:'5'}}, 
+          { son:'sound/la_terca_menor+1_oitava.wav',data: {test_part: 'test', correct_response:'6'}}, 
+          { son:'sound/la_terca_maior_oitava.wav',data: {test_part: 'test', correct_response:'7'}}, 
+          { son:'sound/la_terca_maior+1_oitava.wav',data: {test_part: 'test', correct_response:'8'}}, 
+          { son:'sound/la_quarta_justa_oitava.wav',data: {test_part: 'test', correct_response:'9'}}, 
+          { son:'sound/la_quarta_justa+1_oitava.wav',data: {test_part: 'test', correct_response:'10'}}, 
+          { son:'sound/la_quarta_aumentada_oitava.wav',data: {test_part: 'test', correct_response:'11'}}, 
+          { son:'sound/la_quarta_aumentada+1_oitava.wav',data: {test_part: 'test', correct_response:'12'}}, 
+          { son:'sound/la_quinta_justa_oitava.wav',data: {test_part: 'test', correct_response:'13'}}, 
+          { son:'sound/la_quinta_justa+1_oitava.wav',data: {test_part: 'test', correct_response:'14'}}, 
+          { son:'sound/la_quinta_aumentada_oitava.wav',data: {test_part: 'test', correct_response:'15'}}, 
+          { son:'sound/la_quinta_aumentada+1_oitava.wav',data: {test_part: 'test', correct_response:'16'}}, 
+          { son:'sound/la_sexta_maior_oitava.wav',data: {test_part: 'test', correct_response:'17'}}, 
+          { son:'sound/la_sexta_maior+1_oitava.wav',data: {test_part: 'test', correct_response:'18'}}, 
+          { son:'sound/la_sexta_aumentada_oitava.wav',data: {test_part: 'test', correct_response:'19'}}, 
+          { son:'sound/la_sexta_aumentada+1_oitava.wav',data: {test_part: 'test', correct_response:'20'}}, 
+          { son:'sound/la_setima_maior_oitava.wav',data: {test_part: 'test', correct_response:'21'}}, 
+          { son:'sound/la_setima_maior+1_oitava.wav',data: {test_part: 'test', correct_response:'22'}}, 
+          { son:'sound/la_oitava_oitava.wav',data: {test_part: 'test', correct_response:'23'}},
+
+          { son:'sound/do_unissono_+1.wav',data: {test_part: 'test', correct_response:'0'}}, 
+          { son:'sound/do_segunda_menor.wav',data: {test_part: 'test', correct_response:'1'}}, 
+          { son:'sound/do_segunda_menor+1.wav',data: {test_part: 'test', correct_response:'2'}}, 
+          { son:'sound/do_segunda_maior.wav',data: {test_part: 'test', correct_response:'3'}}, 
+          { son:'sound/do_segunda_maior+1.wav',data: {test_part: 'test', correct_response:'4'}},
+          { son:'sound/do_terca_menor.wav',data: {test_part: 'test', correct_response:'5'}}, 
+          { son:'sound/do_terca_menor+1.wav',data: {test_part: 'test', correct_response:'6'}}, 
+          { son:'sound/do_terca_maior.wav',data: {test_part: 'test', correct_response:'7'}}, 
+          { son:'sound/do_terca_maior+1.wav',data: {test_part: 'test', correct_response:'8'}}, 
+          { son:'sound/do_quarta_justa.wav',data: {test_part: 'test', correct_response:'9'}}, 
+          { son:'sound/do_quarta_justa+1.wav',data: {test_part: 'test', correct_response:'10'}}, 
+          { son:'sound/do_quarta_aumentada.wav',data: {test_part: 'test', correct_response:'11'}}, 
+          { son:'sound/do_quarta_aumentada+1.wav',data: {test_part: 'test', correct_response:'12'}}, 
+          { son:'sound/do_quinta_justa.wav',data: {test_part: 'test', correct_response:'13'}}, 
+          { son:'sound/do_quinta_justa+1.wav',data: {test_part: 'test', correct_response:'14'}}, 
+          { son:'sound/do_quinta_aumentada.wav',data: {test_part: 'test', correct_response:'15'}}, 
+          { son:'sound/do_quinta_aumentada+1.wav',data: {test_part: 'test', correct_response:'16'}}, 
+          { son:'sound/do_sexta_maior.wav',data: {test_part: 'test', correct_response:'17'}}, 
+          { son:'sound/do_sexta_maior+1.wav',data: {test_part: 'test', correct_response:'18'}}, 
+          { son:'sound/do_sexta_aumentada.wav',data: {test_part: 'test', correct_response:'19'}}, 
+          { son:'sound/do_sexta_aumentada+1.wav',data: {test_part: 'test', correct_response:'20'}}, 
+          { son:'sound/do_setima_maior.wav',data: {test_part: 'test', correct_response:'21'}}, 
+          { son:'sound/do_setima_maior+1.wav',data: {test_part: 'test', correct_response:'22'}}, 
+          { son:'sound/do_oitava.wav',data: {test_part: 'test', correct_response:'23'}},
+          { son:'sound/do_unissono_+1_oitava.wav',data: {test_part: 'test', correct_response:'0'}}, 
+          { son:'sound/do_segunda_menor_oitava.wav',data: {test_part: 'test', correct_response:'1'}}, 
+          { son:'sound/do_segunda_menor+1_oitava.wav',data: {test_part: 'test', correct_response:'2'}}, 
+          { son:'sound/do_segunda_maior_oitava.wav',data: {test_part: 'test', correct_response:'3'}},
+          { son:'sound/do_segunda_maior+1_oitava.wav',data: {test_part: 'test', correct_response:'4'}},
+          { son:'sound/do_terca_menor_oitava.wav',data: {test_part: 'test', correct_response:'5'}}, 
+          { son:'sound/do_terca_menor+1_oitava.wav',data: {test_part: 'test', correct_response:'6'}}, 
+          { son:'sound/do_terca_maior_oitava.wav',data: {test_part: 'test', correct_response:'7'}}, 
+          { son:'sound/do_terca_maior+1_oitava.wav',data: {test_part: 'test', correct_response:'8'}},
+          { son:'sound/do_quarta_justa_oitava.wav',data: {test_part: 'test', correct_response:'9'}},
+          { son:'sound/do_quarta_justa+1_oitava.wav',data: {test_part: 'test', correct_response:'10'}}, 
+          { son:'sound/do_quarta_aumentada_oitava.wav',data: {test_part: 'test', correct_response:'11'}}, 
+          { son:'sound/do_quarta_aumentada+1_oitava.wav',data: {test_part: 'test', correct_response:'12'}}, 
+          { son:'sound/do_quinta_justa_oitava.wav',data: {test_part: 'test', correct_response:'13'}}, 
+          { son:'sound/do_quinta_justa+1_oitava.wav',data: {test_part: 'test', correct_response:'14'}}, 
+          { son:'sound/do_quinta_aumentada_oitava.wav',data: {test_part: 'test', correct_response:'15'}}, 
+          { son:'sound/do_quinta_aumentada+1_oitava.wav',data: {test_part: 'test', correct_response:'16'}},
+          { son:'sound/do_sexta_maior_oitava.wav',data: {test_part: 'test', correct_response:'17'}}, 
+          { son:'sound/do_sexta_maior+1_oitava.wav',data: {test_part: 'test', correct_response:'18'}}, 
+          { son:'sound/do_sexta_aumentada_oitava.wav',data: {test_part: 'test', correct_response:'19'}}, 
+          { son:'sound/do_sexta_aumentada+1_oitava.wav',data: {test_part: 'test', correct_response:'20'}}, 
+          { son:'sound/do_setima_maior_oitava.wav',data: {test_part: 'test', correct_response:'21'}},
+          { son:'sound/do_setima_maior+1_oitava.wav',data: {test_part: 'test', correct_response:'22'}}, 
+          { son:'sound/do_oitava_oitava.wav',data: {test_part: 'test', correct_response:'23'}}
+];
+    
+   
+    var test = {
+      type: "audio-button-response",
+      stimulus: jsPsych.timelineVariable('son'),
+      choices: jsPsych.NO_KEYS,
+      prompt: "<p>Vai lá, bonzao.... responde ae</p>",
+      choices: ['unissono_+1', 'segunda_menor', 'segunda_menor+1', 'segunda_maior', 'segunda_maior+1', 'terca_menor', 'terca_menor+1', 'terca_maior', 'terca_maior+1', 'quarta_justa', 'quarta_justa+1', 'quarta_aumentada', 'quarta_aumentada+1', 'quinta_justa', 'quinta_justa+1', 'quinta_aumentada', 'quinta_aumentada+1', 'sexta_maior', 'sexta_maior+1', 'sexta_aumentada', 'sexta_aumentada+1', 'setima_maior', 'setima_maior+1', 'oitava'],
+      response_ends_trial: true,
+      data: jsPsych.timelineVariable('data'),
+      on_finish: function(data) {
+            data.correct = data.button_pressed == data.correct_response;
+    }
+}
+
+/*Treinando diferenciação*/
+var feedback = {
+        type: 'html-button-response',
+        choices: ['Sou gay e quero continuar'],
+        stimulus: function() {
+            var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+            var nome_trial = jsPsych.data.get().last(1).values()[0].son;
+            if (last_trial_correct) {
+                return '<font size="5">Certo!<br><br>Aperte enter para continuar</font>';
+            } else {
+                return '<font size="5">Errado.<br><br>Era' +nome_trial+ ' seu merda </font>'
+            }
+        }
+    }
+    stimulus: function() {
+            
+                return last_trial
+      }
+}
+
+    var test_procedure = {
+      timeline: [test, feedback],
+      timeline_variables: test_stimuli,
+      repetitions: 10,
+      randomize_order: true
+        }
+  
+timeline.push(test_procedure);  
+
+
+
+var acuracia = {
+        type: "html-keyboard-response",
+        choices: [13],
+        data: {
+            primeiro_treino: 'primeiro_treino'
+        },
+        stimulus: function() {
+
+            var trials = jsPsych.data.get().filter({
+                test_part: 'test'
+            });
+            var correct_trials = trials.filter({
+                correct: true
+            });
+            var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
+
+            return '<font size="5">A sua taxa de acerto foi ' + accuracy + '%.<br><br>Seu merda</font>';
+
+        }
+    }
+timeline.push(acuracia);
+
+    /* Treino em loop */
+
+    var cabou = {
+      type: "html-keyboard-response",
+      stimulus: "PENIS",
+      post_trial_gap: 0,
+      choices: ['spacebar']
+    };
+    timeline.push(cabou);
+    
+    /* start the experiment */
+
+    jsPsych.init({
+      timeline: timeline,
+      preload_audio: ['sound/do_unissono_+1.wav', 'sound/do_segunda_menor.wav', 'sound/do_segunda_menor+1.wav', 'sound/do_segunda_maior.wav', 'sound/do_segunda_maior+1.wav', 'sound/do_terca_menor.wav', 'sound/do_terca_menor+1.wav', 'sound/do_terca_maior.wav', 'sound/do_terca_maior+1.wav', 'sound/do_quarta_justa.wav', 'sound/do_quarta_justa+1.wav', 'sound/do_quarta_aumentada.wav', 'sound/do_quarta_aumentada+1.wav', 'sound/do_quinta_justa.wav', 'sound/do_quinta_justa+1.wav', 'sound/do_quinta_aumentada.wav', 'sound/do_quinta_aumentada+1.wav', 'sound/do_sexta_maior.wav', 'sound/do_sexta_maior+1.wav', 'sound/do_sexta_aumentada.wav', 'sound/do_sexta_aumentada+1.wav', 'sound/do_setima_maior.wav', 'sound/do_setima_maior+1.wav', 'sound/do_oitava.wav', 'sound/do_unissono_+1_oitava.wav', 'sound/do_segunda_menor_oitava.wav', 'sound/do_segunda_menor+1_oitava.wav', 'sound/do_segunda_maior_oitava.wav', 'sound/do_segunda_maior+1_oitava.wav', 'sound/do_terca_menor_oitava.wav', 'sound/do_terca_menor+1_oitava.wav', 'sound/do_terca_maior_oitava.wav', 'sound/do_terca_maior+1_oitava.wav', 'sound/do_quarta_justa_oitava.wav', 'sound/do_quarta_justa+1_oitava.wav', 'sound/do_quarta_aumentada_oitava.wav', 'sound/do_quarta_aumentada+1_oitava.wav', 'sound/do_quinta_justa_oitava.wav', 'sound/do_quinta_justa+1_oitava.wav', 'sound/do_quinta_aumentada_oitava.wav', 'sound/do_quinta_aumentada+1_oitava.wav', 'sound/do_sexta_maior_oitava.wav', 'sound/do_sexta_maior+1_oitava.wav', 'sound/do_sexta_aumentada_oitava.wav', 'sound/do_sexta_aumentada+1_oitava.wav', 'sound/do_setima_maior_oitava.wav', 'sound/do_setima_maior+1_oitava.wav', 'sound/do_oitava_oitava.wav'],
+      on_finish: function(data) {
+      var resultJson = jsPsych.data.get().filter([{trial_type: 'survey-text'}, {trial_type: 'html-button-response'}, {trial_type: 'audio-keyboard-response'}]).json();
+      }
+    });
+  </script>
+</html>
+
